@@ -1,0 +1,5 @@
+Fixed problem in which bulk density was not being read on restart unless user
+had picked a certain flag indicating "new" format of layer file.
+--This line, and those below, will be ignored--
+
+M    tLithologyManager/tLithologyManager.cpp

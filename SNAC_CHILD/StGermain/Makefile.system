@@ -1,0 +1,421 @@
+ifndef WHICH
+	WHICH=/usr/bin/which
+endif
+ifndef UNAME
+	UNAME=/usr/bin/uname
+endif
+ifndef UNAME_M
+	UNAME_M=/usr/bin/uname -m
+endif
+ifndef UNAME_R
+	UNAME_R=/usr/bin/uname -r
+endif
+ifndef MACHINE
+	MACHINE=x86_64
+endif
+ifndef KERNEL_RELEASE
+	KERNEL_RELEASE=OtherCats
+endif
+ifndef UNAME_S
+	UNAME_S=/usr/bin/uname -s
+endif
+ifndef SYSTEM
+	SYSTEM=Darwin
+endif
+ifndef MAKE
+	MAKE=/usr/bin/make
+endif
+ifndef SH
+	SH=/bin/sh
+endif
+ifeq (default,$(origin RM))
+	RM=/bin/rm
+endif
+ifndef RM
+	RM=/bin/rm
+endif
+ifndef RM_F
+	RM_F=/bin/rm -rf
+endif
+ifndef CD
+	CD=cd
+endif
+ifndef CP
+	CP=/bin/cp
+endif
+ifndef CP_F
+	CP_F=/bin/cp -f
+endif
+ifndef MV
+	MV=/bin/mv
+endif
+ifndef MV_F
+	MV_F=/bin/mv -f
+endif
+ifndef MKDIR
+	MKDIR=mkdir -p
+endif
+ifndef SED
+	SED=/usr/bin/sed
+endif
+ifndef FIND
+	FIND=/usr/bin/find
+endif
+ifndef LN
+	LN=/bin/ln
+endif
+ifndef LN_S
+	LN_S=/bin/ln -fs
+endif
+ifndef TEE
+	TEE=/usr/bin/tee
+endif
+ifndef NM
+	NM=/opt/local/bin/nm
+endif
+ifndef LS
+	LS=/bin/ls
+endif
+ifndef GREP
+	GREP=/usr/bin/grep
+endif
+ifndef AR
+	AR=/usr/bin/ar
+endif
+ifndef AR_C
+	AR_C=${AR} -cru
+endif
+ifndef RANLIB
+	RANLIB=/usr/bin/ranlib
+endif
+ifeq (default,$(origin CC))
+	CC=/usr/bin/cc
+endif
+ifndef CC
+	CC=/usr/bin/cc
+endif
+ifndef CC_TYPE
+	CC_TYPE=gnu
+endif
+ifeq (default,$(origin CXX))
+	CXX=/usr/bin/g++
+endif
+ifndef CC_PIPE
+	CC_PIPE=-pipe
+endif
+ifndef CC_64
+	CC_64=-m64
+endif
+ifndef SYSTEM_SIZEOF_LONG
+	SYSTEM_SIZEOF_LONG=8
+endif
+ifndef SYSTEM_64
+	SYSTEM_64=1
+endif
+ifndef SYSTEM_BIG_ENDIAN
+	SYSTEM_BIG_ENDIAN=0
+endif
+ifndef OBJCC
+	OBJCC=/usr/bin/cc -x objective-c
+endif
+ifndef OBJECTIVEC_LIBS
+	OBJECTIVEC_LIBS=-lobjc
+endif
+ifndef CXX_EXT
+	CXX_EXT=cxx
+endif
+ifndef CXX
+	CXX=/usr/bin/g++
+endif
+ifndef CXX_TYPE
+	CXX_TYPE=gnu
+endif
+ifndef CXX_PIPE
+	CXX_PIPE=-pipe
+endif
+ifeq (default,$(origin F77))
+	F77=
+endif
+ifndef F77
+	F77=
+endif
+ifndef F77_TYPE
+	F77_TYPE=
+endif
+ifndef LINKER
+	LINKER=/usr/bin/cc
+endif
+ifndef SO_EXT
+	SO_EXT=dylib
+endif
+ifndef MODULE_EXT
+	MODULE_EXT=so
+endif
+ifndef SO_CFLAGS
+	SO_CFLAGS=
+endif
+ifndef SO_LFLAGS
+	SO_LFLAGS=-dynamiclib -flat_namespace -undefined suppress -single_module
+endif
+ifndef MODULE_LFLAGS
+	MODULE_LFLAGS=-bundle -flat_namespace -undefined suppress
+endif
+ifndef RPATH_FLAG
+	RPATH_FLAG=
+endif
+ifndef RPATH
+	RPATH=
+endif
+ifndef RPATH_LFLAGS
+	RPATH_LFLAGS=
+endif
+ifndef EXPORT_DYNAMIC_LFLAGS
+	EXPORT_DYNAMIC_LFLAGS=-framework System -framework CoreServices -framework Foundation
+endif
+ifndef CC_CXX_LFLAGS
+	CC_CXX_LFLAGS=-lstdc++
+endif
+ifndef FORTRAN_COMPILER_LIBDIR
+	FORTRAN_COMPILER_LIBDIR=
+endif
+ifndef EXTRA_FORTRAN_LIBS
+	EXTRA_FORTRAN_LIBS=
+endif
+ifndef CC_FORTRAN_LFLAGS
+	CC_FORTRAN_LFLAGS=
+endif
+ifndef F77_LIBS
+	F77_LIBS=
+endif
+ifndef F77_SYMBOL_TRANSLATION
+	F77_SYMBOL_TRANSLATION=
+endif
+ifndef CC_WARNINGLEVEL
+	CC_WARNINGLEVEL=-Wall
+endif
+ifndef CC_SYMBOLLEVEL
+	CC_SYMBOLLEVEL= 
+endif
+ifndef CC_OPTIMISATIONLEVEL
+	CC_OPTIMISATIONLEVEL=-O3 -march=athlon64 -DNDEBUG
+endif
+ifndef NOSHARED
+	NOSHARED=
+endif
+ifndef DL_DIR
+	DL_DIR=/sw
+endif
+ifndef DL_LIBDIR
+	DL_LIBDIR=/sw/lib
+endif
+ifndef DL_LIBFILES
+	DL_LIBFILES=
+endif
+ifndef DL_LIBS
+	DL_LIBS=-L${DL_LIBDIR} ${DL_LIBFILES}
+endif
+ifndef DL_INCDIR
+	DL_INCDIR=/sw/include
+endif
+ifndef DL_INCLUDES
+	DL_INCLUDES=-I/sw/include
+endif
+ifndef NOPYTHON
+	NOPYTHON=
+endif
+ifndef DOXYGEN
+	DOXYGEN=/usr/bin/doxygen
+endif
+ifndef SVN
+	SVN=/opt/local/bin/svn
+endif
+ifndef HAVE_SVN
+	HAVE_SVN=1
+endif
+ifndef CSOAP_DIR
+	CSOAP_DIR=/usr/lib/libcsoap
+endif
+ifndef CSOAP_INCDIR
+	CSOAP_INCDIR=${CSOAP_DIR}/include/libcsoap-1.0
+endif
+ifndef CSOAP_INCLUDES
+	CSOAP_INCLUDES=-I${CSOAP_INCDIR}
+endif
+ifndef CSOAP_LIBDIR
+	CSOAP_LIBDIR=${CSOAP_DIR}/lib
+endif
+ifndef CSOAP_LIBFILES
+	CSOAP_LIBFILES=-lcsoap-1.0
+endif
+ifndef CSOAP_LIBS
+	CSOAP_LIBS=-L${CSOAP_LIBDIR} ${CSOAP_LIBFILES}
+endif
+ifndef NANOHTTP_DIR
+	NANOHTTP_DIR=${CSOAP_DIR}
+endif
+ifndef NANOHTTP_INCDIR
+	NANOHTTP_INCDIR=${NANOHTTP_DIR}/include/nanohttp-1.0
+endif
+ifndef NANOHTTP_INCLUDES
+	NANOHTTP_INCLUDES=-I${NANOHTTP_INCDIR}
+endif
+ifndef NANOHTTP_LIBDIR
+	NANOHTTP_LIBDIR=${NANOHTTP_DIR}/lib
+endif
+ifndef NANOHTTP_LIBFILES
+	NANOHTTP_LIBFILES=-lnanohttp-1.0
+endif
+ifndef NANOHTTP_LIBS
+	NANOHTTP_LIBS=-L${NANOHTTP_LIBDIR} ${NANOHTTP_LIBFILES}
+endif
+ifndef HAVE_SOAP
+	HAVE_SOAP=
+endif
+ifndef REGRESSTOR_URL
+	REGRESSTOR_URL=http://localhost/~alan/cgi-bin/RegresstorServices/Regresstor.cgi
+endif
+USE_OPTIMISED=1
+ifndef OPTIONS
+	OPTIONS=optimised
+endif
+ifndef USE_RUN_LONG_TESTS
+	USE_RUN_LONG_TESTS=
+endif
+ifndef PROJ_ROOT
+	PROJ_ROOT=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/StGermain
+endif
+ifndef BLD_DIR
+	BLD_DIR=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/build-optimised
+endif
+ifndef EXPORT_DIR
+	EXPORT_DIR=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/build-optimised
+endif
+ifndef TMP_DIR
+	TMP_DIR=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/build-optimised/tmp
+endif
+ifndef BIN_DIR
+	BIN_DIR=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/build-optimised/bin
+endif
+ifndef LIB_DIR
+	LIB_DIR=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/build-optimised/lib
+endif
+ifndef INC_DIR
+	INC_DIR=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/build-optimised/include
+endif
+ifndef TST_DIR
+	TST_DIR=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/build-optimised/tests
+endif
+ifndef PYB_DIR
+	PYB_DIR=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/build-optimised/Python
+endif
+ifndef PYC_DIR
+	PYC_DIR=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/build-optimised/Python
+endif
+ifndef SHARE_DIR
+	SHARE_DIR=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/build-optimised/share
+endif
+PROJECT=StGermain
+ifndef FIND_SUBDIRS
+	FIND_SUBDIRS=${FIND} * -type d -follow -prune ! -name .svn
+endif
+ifndef MAKEFILE_FIND_SUBDIRS
+	MAKEFILE_FIND_SUBDIRS=$(shell ${FIND_SUBDIRS})
+endif
+ifndef GET_MODNAME
+	GET_MODNAME=basename `pwd | ${SED} s/src//g | ${SED} s/tests//g`
+endif
+ifndef MAKEFILE_GET_MODNAME
+	MAKEFILE_GET_MODNAME=$(shell ${GET_MODNAME})
+endif
+ifndef MAKEFILE_CHECK_DEPENDENCIES
+	MAKEFILE_CHECK_DEPENDENCIES=$(foreach DEP,${DEPENDS},$(shell cd ${LIB_DIR} && if test -z `find . -name ${PROJECT}${DEP}*` ; then echo Compiling dependency: ${DEP} 1>&2 && cd ${PROJ_ROOT}/src && if test ! -z `find . -type d -name ${DEP}` ; then cd `find . -type d -name ${DEP}` && make 1>&2 ; else echo Cannot find dependency: ${DEP} 1>&2 ; fi ; fi ) )
+endif
+ifndef CC_SYMBOLLEVEL
+	CC_SYMBOLLEVEL= 
+endif
+ifndef CC_WARNINGLEVEL
+	CC_WARNINGLEVEL=-Wall
+endif
+ifndef CC_DEBUGLEVEL
+	CC_DEBUGLEVEL=-DDEBUG -DQUERY_FP
+endif
+ifndef MATH_DIR
+	MATH_DIR=/usr
+endif
+ifndef MATH_INCDIR
+	MATH_INCDIR=${MATH_DIR}/include
+endif
+ifndef MATH_INCLUDES
+	MATH_INCLUDES=-I${MATH_INCDIR}
+endif
+ifndef MATH_LIBDIR
+	MATH_LIBDIR=${MATH_DIR}/lib
+endif
+ifndef MATH_LIBS
+	MATH_LIBS=-L${MATH_LIBDIR} -lm -lmx
+endif
+ifndef XML2_CONFIG
+	XML2_CONFIG=/Users/eunseo/anaconda/bin/xml2-config
+endif
+ifndef XML_DIR
+	XML_DIR=/Users/eunseo/anaconda
+endif
+ifndef XML_CFLAGS
+	XML_CFLAGS=-I/Users/eunseo/anaconda/include/libxml2
+endif
+ifndef XML_INCLUDES
+	XML_INCLUDES=-I/Users/eunseo/anaconda/include/libxml2
+endif
+ifndef XML_LIBS
+	XML_LIBS=-L/Users/eunseo/anaconda/lib -lxml2 -lz -liconv -lm
+endif
+ifndef MPI_DIR
+	MPI_DIR=/Users/eunseo/opt/openmpi-1.6.1
+endif
+ifndef MPI_BINDIR
+	MPI_BINDIR=/Users/eunseo/opt/openmpi-1.6.1/bin
+endif
+ifndef MPI_LIBDIR
+	MPI_LIBDIR=/Users/eunseo/opt/openmpi-1.6.1/lib
+endif
+ifndef MPI_INCDIR
+	MPI_INCDIR=/Users/eunseo/opt/openmpi-1.6.1/include
+endif
+ifndef MPI_INCLUDES
+	MPI_INCLUDES=-I${MPI_INCDIR}
+endif
+ifndef MPI_IMPLEMENTATION
+	MPI_IMPLEMENTATION=open_mpi
+endif
+ifndef MPI_LIBRARY
+	MPI_LIBRARY=mpi
+endif
+ifndef MPI_LIBFILES
+	MPI_LIBFILES=-lmpi
+endif
+ifndef MPI_RPATH
+	MPI_RPATH=
+endif
+ifndef MPI_LIBS
+	MPI_LIBS=-L${LIB_DIR} -l${MPI_LIBRARY} -L${MPI_LIBDIR} ${MPI_LIBFILES} -L/sw/lib ${CC_FORTRAN_LFLAGS}
+endif
+ifndef MPI_EXTERNAL_LIBS
+	MPI_EXTERNAL_LIBS=${CC_FORTRAN_LFLAGS}
+endif
+ifndef MPI_RUN_COMMAND
+	MPI_RUN_COMMAND=mpirun
+endif
+ifndef MPI_RUN
+	MPI_RUN=/Users/eunseo/opt/openmpi-1.6.1/bin/mpirun
+endif
+ifndef MPI_NPROC
+	MPI_NPROC=-np
+endif
+HAVE_MPI=1
+ifndef APPS_XML_DIR
+	APPS_XML_DIR=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/build-optimised/lib/STGERMAIN
+endif
+	EXPORT_INCLUDE_DIR=/StGermain
+	EXAMPLES_DIR=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/build-optimised/share/StGermain
+	STG_INCLUDE_PATH=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/build-optimised/lib/StGermain
+	EXPORT_INCLUDE_DIR=/Users/eunseo/projects/SNAC_CHILD_Coupling/SNAC_CHILD/build-optimised/lib/StGermain/StGermain

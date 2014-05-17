@@ -1,0 +1,11 @@
+Added 2D barycentric interpolation for the special case, xy plane.
+--This line, and those below, will be ignored--
+
+M    libSnac/src/TetrahedraTables.c
+M    libSnac/src/TetrahedraTables.h
+M    plugins/remesher_BI/RemeshElements.c
+M    plugins/remesher_BI/Mesh.h
+M    plugins/remesher_BI/Utils.h
+M    plugins/remesher_BI/Remesh.c
+M    plugins/remesher_BI/makefile
+M    plugins/plastic_BI/Remesh.c

@@ -1,0 +1,6 @@
+GSL not needed any more - don't do the GSL configuration.
+Barycentric Interpolation (BI) is now the remeshing scheme of choice.
+--This line, and those below, will be ignored--
+
+M    project-config.sh
+M    plugins/Makefile.def
