@@ -1,4 +1,4 @@
-CXX=g++
+CXX=g++-mp-4.4
 
 CCFLAGS=-g -fPIC -I. -I../child/Code/ChildInterface
 #LDFLAGS=-g -shared -lstdc++ -L/Users/eunseo/projects/SNAC_CHILD_Coupling/child-clinic-package_oct2011/bin -lchild
@@ -17,8 +17,8 @@ default: all
 
 $(SHAREDOBJ): $(OBJS)
 	$(CXX) $(OBJS) $(LDFLAGS) -o $@
-	cp -f $@ ${SNAC_LIBDIR}
-	cp -f ${HEADERS} ${SNAC_INCDIR}
+	mkdir ${SNAC_LIBDIR}; cp -f $@ ${SNAC_LIBDIR}
+	mkdir ${SNAC_INCDIR}; cp -f ${HEADERS} ${SNAC_INCDIR}
 
 clean:
 	rm -f $(OBJS)
