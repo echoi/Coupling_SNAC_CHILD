@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/bmi/!svn/ver/33/trunk/c/testing
+END
+grid_info_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/bmi/!svn/ver/33/trunk/c/testing/grid_info_test.c
+END
+irf_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/bmi/!svn/ver/33/trunk/c/testing/irf_test.c
+END
+print_var_names_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/bmi/!svn/ver/33/trunk/c/testing/print_var_names_test.c
+END
+set_value_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/bmi/!svn/ver/33/trunk/c/testing/set_value_test.c
+END
+get_value_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/bmi/!svn/ver/33/trunk/c/testing/get_value_test.c
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/bmi/!svn/ver/2/trunk/c/testing/CMakeLists.txt
+END

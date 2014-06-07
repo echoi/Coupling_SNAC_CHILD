@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/bmi/!svn/ver/6/trunk/fortran/bmi
+END
+mod_bmi.f90
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/bmi/!svn/ver/6/trunk/fortran/bmi/mod_bmi.f90
+END
+bmi_impl.f90
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/bmi/!svn/ver/6/trunk/fortran/bmi/bmi_impl.f90
+END
