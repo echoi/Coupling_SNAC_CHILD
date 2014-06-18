@@ -1,0 +1,1 @@
+/opt/local/bin/mpicc-mpich-mp   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/get_value_test.dir/get_value_test.c.o  -o get_value_test  ../bmi/libbmi.dylib 

@@ -1,0 +1,219 @@
+The system is: Darwin - 12.5.0 - i386
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /opt/local/bin/mpicc-mpich-mp 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is Clang, found in "/Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/2.8.12.2/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /opt/local/bin/mpicxx-mpich-mp 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is Clang, found in "/Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/2.8.12.2/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec676947493/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec676947493.dir/build.make CMakeFiles/cmTryCompileExec676947493.dir/build
+/opt/local/bin/cmake -E cmake_progress_report /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec676947493.dir/testCCompiler.c.o
+/opt/local/bin/mpicc-mpich-mp    -o CMakeFiles/cmTryCompileExec676947493.dir/testCCompiler.c.o   -c /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec676947493
+/opt/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec676947493.dir/link.txt --verbose=1
+/opt/local/bin/mpicc-mpich-mp    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec676947493.dir/testCCompiler.c.o  -o cmTryCompileExec676947493  
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1506371216/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1506371216.dir/build.make CMakeFiles/cmTryCompileExec1506371216.dir/build
+/opt/local/bin/cmake -E cmake_progress_report /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1506371216.dir/CMakeCCompilerABI.c.o
+/opt/local/bin/mpicc-mpich-mp    -o CMakeFiles/cmTryCompileExec1506371216.dir/CMakeCCompilerABI.c.o   -c /opt/local/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec1506371216
+/opt/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1506371216.dir/link.txt --verbose=1
+/opt/local/bin/mpicc-mpich-mp    -Wl,-search_paths_first -Wl,-headerpad_max_install_names -v -Wl,-v CMakeFiles/cmTryCompileExec1506371216.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec1506371216   
+mpicc for MPICH version 3.1
+Apple LLVM version 4.2 (clang-425.0.28) (based on LLVM 3.2svn)
+Target: x86_64-apple-darwin12.5.0
+Thread model: posix
+ "/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.8.0 -o cmTryCompileExec1506371216 -L/opt/local/lib/mpich-mp -headerpad_max_install_names -flat_namespace -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTryCompileExec1506371216.dir/CMakeCCompilerABI.c.o -lpmpich -lmpich -lopa -lmpl -lpthread -lSystem /usr/bin/../lib/clang/4.2/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-136
+configured to support archs: armv6 armv7 armv7s i386 x86_64
+Library search paths:
+	/opt/local/lib/mpich-mp
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec1506371216/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec1506371216.dir/build.make CMakeFiles/cmTryCompileExec1506371216.dir/build]
+  ignore line: [/opt/local/bin/cmake -E cmake_progress_report /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec1506371216.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/opt/local/bin/mpicc-mpich-mp    -o CMakeFiles/cmTryCompileExec1506371216.dir/CMakeCCompilerABI.c.o   -c /opt/local/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec1506371216]
+  ignore line: [/opt/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1506371216.dir/link.txt --verbose=1]
+  ignore line: [/opt/local/bin/mpicc-mpich-mp    -Wl,-search_paths_first -Wl,-headerpad_max_install_names -v -Wl,-v CMakeFiles/cmTryCompileExec1506371216.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec1506371216   ]
+  ignore line: [mpicc for MPICH version 3.1]
+  ignore line: [Apple LLVM version 4.2 (clang-425.0.28) (based on LLVM 3.2svn)]
+  ignore line: [Target: x86_64-apple-darwin12.5.0]
+  ignore line: [Thread model: posix]
+  link line: [ "/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.8.0 -o cmTryCompileExec1506371216 -L/opt/local/lib/mpich-mp -headerpad_max_install_names -flat_namespace -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTryCompileExec1506371216.dir/CMakeCCompilerABI.c.o -lpmpich -lmpich -lopa -lmpl -lpthread -lSystem /usr/bin/../lib/clang/4.2/lib/darwin/libclang_rt.osx.a]
+    arg [/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.8.0] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec1506371216] ==> ignore
+    arg [-L/opt/local/lib/mpich-mp] ==> dir [/opt/local/lib/mpich-mp]
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-flat_namespace] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec1506371216.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lpmpich] ==> lib [pmpich]
+    arg [-lmpich] ==> lib [mpich]
+    arg [-lopa] ==> lib [opa]
+    arg [-lmpl] ==> lib [mpl]
+    arg [-lpthread] ==> lib [pthread]
+    arg [-lSystem] ==> lib [System]
+    arg [/usr/bin/../lib/clang/4.2/lib/darwin/libclang_rt.osx.a] ==> lib [/usr/bin/../lib/clang/4.2/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/opt/local/lib/mpich-mp;/usr/lib;/usr/local/lib]
+  Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
+  remove lib [System]
+  collapse lib [/usr/bin/../lib/clang/4.2/lib/darwin/libclang_rt.osx.a] ==> [/usr/lib/clang/4.2/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/opt/local/lib/mpich-mp] ==> [/opt/local/lib/mpich-mp]
+  collapse library dir [/opt/local/lib/mpich-mp] ==> [/opt/local/lib/mpich-mp]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
+  collapse framework dir [/System/Library/Frameworks/] ==> [/System/Library/Frameworks]
+  implicit libs: [pmpich;mpich;opa;mpl;pthread;/usr/lib/clang/4.2/lib/darwin/libclang_rt.osx.a]
+  implicit dirs: [/opt/local/lib/mpich-mp;/usr/lib;/usr/local/lib]
+  implicit fwks: [/Library/Frameworks;/System/Library/Frameworks]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4279065818/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4279065818.dir/build.make CMakeFiles/cmTryCompileExec4279065818.dir/build
+/opt/local/bin/cmake -E cmake_progress_report /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec4279065818.dir/testCXXCompiler.cxx.o
+/opt/local/bin/mpicxx-mpich-mp     -o CMakeFiles/cmTryCompileExec4279065818.dir/testCXXCompiler.cxx.o -c /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec4279065818
+/opt/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4279065818.dir/link.txt --verbose=1
+/opt/local/bin/mpicxx-mpich-mp     -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec4279065818.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec4279065818  
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1428373249/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1428373249.dir/build.make CMakeFiles/cmTryCompileExec1428373249.dir/build
+/opt/local/bin/cmake -E cmake_progress_report /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1428373249.dir/CMakeCXXCompilerABI.cpp.o
+/opt/local/bin/mpicxx-mpich-mp     -o CMakeFiles/cmTryCompileExec1428373249.dir/CMakeCXXCompilerABI.cpp.o -c /opt/local/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec1428373249
+/opt/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1428373249.dir/link.txt --verbose=1
+/opt/local/bin/mpicxx-mpich-mp     -Wl,-search_paths_first -Wl,-headerpad_max_install_names -v -Wl,-v CMakeFiles/cmTryCompileExec1428373249.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1428373249   
+mpicxx for MPICH version 3.1
+Apple LLVM version 4.2 (clang-425.0.28) (based on LLVM 3.2svn)
+Target: x86_64-apple-darwin12.5.0
+Thread model: posix
+ "/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.8.0 -o cmTryCompileExec1428373249 -L/opt/local/lib/mpich-mp -headerpad_max_install_names -flat_namespace -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTryCompileExec1428373249.dir/CMakeCXXCompilerABI.cpp.o -lmpichcxx -lpmpich -lmpich -lopa -lmpl -lpthread -lstdc++ -lSystem /usr/bin/../lib/clang/4.2/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-136
+configured to support archs: armv6 armv7 armv7s i386 x86_64
+Library search paths:
+	/opt/local/lib/mpich-mp
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec1428373249/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec1428373249.dir/build.make CMakeFiles/cmTryCompileExec1428373249.dir/build]
+  ignore line: [/opt/local/bin/cmake -E cmake_progress_report /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec1428373249.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/opt/local/bin/mpicxx-mpich-mp     -o CMakeFiles/cmTryCompileExec1428373249.dir/CMakeCXXCompilerABI.cpp.o -c /opt/local/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec1428373249]
+  ignore line: [/opt/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1428373249.dir/link.txt --verbose=1]
+  ignore line: [/opt/local/bin/mpicxx-mpich-mp     -Wl,-search_paths_first -Wl,-headerpad_max_install_names -v -Wl,-v CMakeFiles/cmTryCompileExec1428373249.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1428373249   ]
+  ignore line: [mpicxx for MPICH version 3.1]
+  ignore line: [Apple LLVM version 4.2 (clang-425.0.28) (based on LLVM 3.2svn)]
+  ignore line: [Target: x86_64-apple-darwin12.5.0]
+  ignore line: [Thread model: posix]
+  link line: [ "/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.8.0 -o cmTryCompileExec1428373249 -L/opt/local/lib/mpich-mp -headerpad_max_install_names -flat_namespace -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTryCompileExec1428373249.dir/CMakeCXXCompilerABI.cpp.o -lmpichcxx -lpmpich -lmpich -lopa -lmpl -lpthread -lstdc++ -lSystem /usr/bin/../lib/clang/4.2/lib/darwin/libclang_rt.osx.a]
+    arg [/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.8.0] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec1428373249] ==> ignore
+    arg [-L/opt/local/lib/mpich-mp] ==> dir [/opt/local/lib/mpich-mp]
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-flat_namespace] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec1428373249.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lmpichcxx] ==> lib [mpichcxx]
+    arg [-lpmpich] ==> lib [pmpich]
+    arg [-lmpich] ==> lib [mpich]
+    arg [-lopa] ==> lib [opa]
+    arg [-lmpl] ==> lib [mpl]
+    arg [-lpthread] ==> lib [pthread]
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lSystem] ==> lib [System]
+    arg [/usr/bin/../lib/clang/4.2/lib/darwin/libclang_rt.osx.a] ==> lib [/usr/bin/../lib/clang/4.2/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/opt/local/lib/mpich-mp;/usr/lib;/usr/local/lib]
+  Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
+  remove lib [System]
+  collapse lib [/usr/bin/../lib/clang/4.2/lib/darwin/libclang_rt.osx.a] ==> [/usr/lib/clang/4.2/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/opt/local/lib/mpich-mp] ==> [/opt/local/lib/mpich-mp]
+  collapse library dir [/opt/local/lib/mpich-mp] ==> [/opt/local/lib/mpich-mp]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
+  collapse framework dir [/System/Library/Frameworks/] ==> [/System/Library/Frameworks]
+  implicit libs: [mpichcxx;pmpich;mpich;opa;mpl;pthread;stdc++;/usr/lib/clang/4.2/lib/darwin/libclang_rt.osx.a]
+  implicit dirs: [/opt/local/lib/mpich-mp;/usr/lib;/usr/local/lib]
+  implicit fwks: [/Library/Frameworks;/System/Library/Frameworks]
+
+

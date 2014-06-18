@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/testing/irf_test.c
+bmi.h
+-
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+
+testing/../bmi/bmi.h
+

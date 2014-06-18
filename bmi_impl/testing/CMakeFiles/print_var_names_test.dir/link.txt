@@ -1,0 +1,1 @@
+/opt/local/bin/mpicc-mpich-mp   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/print_var_names_test.dir/print_var_names_test.c.o  -o print_var_names_test  ../bmi/libbmi.dylib 

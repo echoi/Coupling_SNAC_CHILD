@@ -1,0 +1,1 @@
+/opt/local/bin/mpicc-mpich-mp   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/set_value_test.dir/set_value_test.c.o  -o set_value_test  ../bmi/libbmi.dylib 

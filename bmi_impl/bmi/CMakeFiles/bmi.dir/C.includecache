@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/bmi/bmi_impl.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+float.h
+-
+bmi.h
+-
+
+bmi/bmi.h
+

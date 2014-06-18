@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/testing/set_value_test.c
+bmi.h
+-
+stdio.h
+-
+stdlib.h
+-
+
+testing/../bmi/bmi.h
+

@@ -1,0 +1,1 @@
+/opt/local/bin/mpicc-mpich-mp   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/irf_test.dir/irf_test.c.o  -o irf_test  ../bmi/libbmi.dylib 
