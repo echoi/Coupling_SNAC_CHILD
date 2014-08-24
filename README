@@ -1,0 +1,56 @@
+Coupling_SNAC_CHILD
+===================
+
+1. Building
+
+1.1 set environments
+For example, in bash,
+
+export SNAC_DIR=${HOME}/projects/Coupling_SNAC_CHILD/SNAC_CHILD/build-optimised
+export SNAC_BINDIR=${SNAC_DIR}/bin
+export SNAC_INCDIR=${SNAC_DIR}/include
+export SNAC_LIBDIR=${SNAC_DIR}/lib
+export SNAC_MODDIR=${SNAC_DIR}/Python
+export PATH=${SNAC_BINDIR}:${PATH}
+export DYLD_LIBRARY_PATH=$SNAC_LIBDIR:${DYLD_LIBRARY_PATH}
+export PYTHONPATH=${SNAC_MODDIR}:${PYTHONPATH}
+
+1.2 build child
+
+cd child/bin
+make -f child_so.mk
+
+Note that a correct build type and compiler should be specified in child_so.mk, which are collected in separage make files such as gcc.mk, gcc_shared.mk, gccmac.mk, and gccmac_shared.mk.
+
+1.3 build childInterface
+
+cd childInterface
+make
+
+1.4 build SNAC
+
+cd SNAC_CHILD
+./configure --options=optimised
+make
+
+2. Test
+
+cd models
+cd SnacTest1
+Snac ./testsnac.xml
+
+2.1 Post-process results
+In models/SnacTest1,
+SNAC:
+
+snac2vtk ./newdata 1 10000000000
+
+CHILD:
+
+../child/Viz/child2vtk
+(give your child output prefix when prompted, 
+which is specified in the input file for CHILD. testchild.in, for instance.)
+
+2.2 Visualize results
+
+Both codes produce (p)vtk files. One can use VisIt or ParaView to visualize them.

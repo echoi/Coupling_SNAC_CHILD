@@ -1,0 +1,1 @@
+/opt/local/bin/mpicc-mpich-mp   -dynamiclib -Wl,-headerpad_max_install_names   -o libbmi.dylib -install_name /Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/bmi/libbmi.dylib CMakeFiles/bmi.dir/bmi_impl.c.o 

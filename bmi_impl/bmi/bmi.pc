@@ -1,0 +1,5 @@
+Name: BMI
+Description: Basic Modeling Interface
+Version: 0.1
+Libs: -L/Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/lib -lbmi
+Cflags: -I/Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/include

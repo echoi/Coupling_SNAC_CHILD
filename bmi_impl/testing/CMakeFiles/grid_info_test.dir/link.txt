@@ -1,0 +1,1 @@
+/opt/local/bin/mpicc-mpich-mp   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/grid_info_test.dir/grid_info_test.c.o  -o grid_info_test  ../bmi/libbmi.dylib 

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/bmi/!svn/ver/34/trunk/c/bmi
+END
+bmi.pc.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/bmi/!svn/ver/10/trunk/c/bmi/bmi.pc.cmake
+END
+bmi_impl.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/bmi/!svn/ver/34/trunk/c/bmi/bmi_impl.c
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/bmi/!svn/ver/7/trunk/c/bmi/CMakeLists.txt
+END
+bmi.h
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/bmi/!svn/ver/33/trunk/c/bmi/bmi.h
+END

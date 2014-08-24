@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/bmi/!svn/ver/2/trunk/python/testing
+END
+get_value_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/bmi/!svn/ver/2/trunk/python/testing/get_value_test.py
+END
+grid_info_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/bmi/!svn/ver/2/trunk/python/testing/grid_info_test.py
+END
+irf_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/bmi/!svn/ver/2/trunk/python/testing/irf_test.py
+END
+print_var_names_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/bmi/!svn/ver/2/trunk/python/testing/print_var_names_test.py
+END
+run_tests.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/bmi/!svn/ver/2/trunk/python/testing/run_tests.py
+END
+set_value_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/bmi/!svn/ver/2/trunk/python/testing/set_value_test.py
+END

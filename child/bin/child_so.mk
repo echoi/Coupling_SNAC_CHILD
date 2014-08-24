@@ -1,8 +1,9 @@
 PT = ../Code
 
 #include hp.mk
+include gcc_shared.mk
 #include gccmac.mk
-include gccmac_shared.mk
+#include gccmac_shared.mk
 #include icc.mk
 #include bcc.mk
 #include PC-lint/pclint.mk
@@ -32,7 +33,7 @@ all : $(EXENAME)
 
 $(EXENAME): $(OBJECTS)
 	$(CXX) $(LDFLAGS) $(OBJECTS) $(LIBS)
-	cp -f $(EXENAME) ${SNAC_LIBDIR}
+	mkdir ${SNAC_DIR}; mkdir ${SNAC_LIBDIR}; cp -f $(EXENAME) ${SNAC_LIBDIR}
 
 erosion.$(OBJEXT): $(PT)/Erosion/erosion.cpp
 	$(CXX) $(CFLAGS) $(PT)/Erosion/erosion.cpp

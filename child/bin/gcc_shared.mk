@@ -23,7 +23,7 @@ LDFLAGS = $(WARNINGFLAGS) -g $(PROFILE) -O2 $(ARCH)
 #LDFLAGS = $(WARNINGFLAGS) -g $(ARCH)
 LIBS =
 
-LDFLAGS += -o $@ -dynamiclib -undefined suppress -flat_namespace
+LDFLAGS += -o $@ -shared -flat_namespace
 
 OBJEXT = o
 EXEEXT = so

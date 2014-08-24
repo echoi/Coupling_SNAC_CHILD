@@ -1,0 +1,3 @@
+/Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/lib/libbmi.dylib
+/Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/include/bmi.h
+/Users/eunseo/projects/Coupling_SNAC_CHILD/bmi_impl/lib/pkgconfig/bmi.pc

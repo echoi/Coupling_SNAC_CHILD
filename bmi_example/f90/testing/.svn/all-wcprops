@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/bmi/!svn/ver/24/trunk/f90/testing
+END
+set_value_test.f90
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/bmi/!svn/ver/24/trunk/f90/testing/set_value_test.f90
+END
+get_value_test.f90
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/bmi/!svn/ver/24/trunk/f90/testing/get_value_test.f90
+END
+irf_test.f90
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/bmi/!svn/ver/24/trunk/f90/testing/irf_test.f90
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/bmi/!svn/ver/24/trunk/f90/testing/CMakeLists.txt
+END
