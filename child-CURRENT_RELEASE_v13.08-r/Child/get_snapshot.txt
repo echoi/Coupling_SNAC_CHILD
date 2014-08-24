@@ -1,0 +1,117 @@
+HOW TO DOWNLOAD A SNAPSHOT OF CHILD FROM THE BOULDER REPOSITORY
+
+G. Tucker, A. Desitter
+February, 2005
+
+Updated:
+$Date: 2006-04-24 23:08:42 $
+
+This describes the steps you need to take in order to obtain a snapshot
+of the CHILD source code and associated files from the code repository
+held at the University of Colorado.
+
+Requirements: you must have a version of the Secure Shell utility (ssh)
+on your system. These instructions assume you are on a Unix system and have
+some familiarity with Unix commands. You'll also need CVS (Concurrent
+Version System) version 1.10 or later.
+
+1. Because the repository is accessed using the Secure Shell (ssh) facility,
+you will need to generate an RSA key pair that will allow you to send and
+receive encrypted transmissions. A key pair consists of a public key that can
+be published and a private key kept secret. You can do this by entering
+"ssh-keygen -t rsa" at the Unix command prompt if you are using openssh.
+If your version of ssh is different, you are in unknown territory. Check out
+the links below though and email us for support.
+   To avoid to have to type a password at each connection, you can leave the
+pass-phrase empty when generating the key pair.
+  At this point and if you are using openssh, you should have two files
+"$HOME/.ssh/id_rsa" (private key) and "$HOME/.ssh/id_rsa.pub" (public key)
+where "$HOME" refers to your home directory location.
+
+Reference:
+http://www.openssh.org/manual.html
+http://www.ticam.utexas.edu/adminworld/sshinterop.html
+
+2. The public key consists of a long sequence of digits, and will be contained
+in a file called "$HOME/.ssh/identity.pub". It looks like:
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEA74jfgIS2BRxP0yQoyM8FrnLJFaJ8lKo2nyWJGPwWGt80
+60IXxOx6FS3bSAXuQEzgCm00Aw/mu6vX/pqAggy2GvzfHFWphW3RT+ScjvL0dkHOgb6ifxg1UoPDNuuW
+Xzjefmrp4DZAf9Bt4mJOqrJ3Fcix/wbitKDIpByTEyr79Pc= agore@toobad.wh.gov
+
+ Using whatever method you prefer, copy the contents of this file and paste
+them in an email message. Send it to Greg Tucker (email at the end),
+explaining that you would like to be added to the CHILD repository list and
+that this is your RSA public key.
+
+Note: if for whatever reason, you do not wish to use your existing ssh key,
+here is a method to get around it:
+- generate the key pair as above but save them as ".ssh/cvsID" and
+  ".ssh/cvsID.pub".
+- send us ".ssh/cvsID.pub".
+- create a executable file (say oxford_ssh) containing:
+#!/bin/sh
+exec ssh -i $HOME/.ssh/cvsID "$@"
+(it tells ssh which public key to use)
+- set CVS_RSH to "/path/to/cu_ssh"
+
+
+3. You now need to modify one of your startup files to tell CVS to use ssh
+when accessing files on a remote system. If you're running a C shell (csh),
+add the following line to the file .cshrc in your home directory:
+  setenv CVS_RSH ssh
+  Or, if you are using a Bourne shell (sh) add the following lines to the file
+.profile in your home directory:
+  CVS_RSH=ssh
+  export CVS_RSH
+  Or, if you have no idea which shell you're running, "echo $SHELL" may give
+you a clue. You may ry as well "ypcat passwd | grep `whoami`" or
+"cat /etc/passwd | grep `whoami`". At a last resort, try both -- chances are
+only one of these two files (.cshrc and .profile) will exist anyway.
+  You should only need to do this once.
+  Then you have to re-load the start-up files to take into account this change.
+The easiest way is to log out and log in. Typing "env | grep CVS" should
+prove that CVS_RSH is properly defined.
+
+Do the following steps only after your key has been added to the access list:
+
+4. Navigate to the directory in which you wish to keep your snapshot (you
+might want to create a new directory for it).
+
+5. Enter the following command:
+
+cvs -d:ext:childcvs@cuesta.colorado.edu:/Users/childcvs/cvs checkout Child
+
+You should then see a new directory called Child with a series of
+subdirectories containing source code, documentation, example input files, etc.
+Later CVS command do not need this long "-d" option.
+
+There has been one report that using "ssh -c 3des" was necessary although
+it should be the default. In such (unlikely) case, create a file containing:
+#! /bin/sh
+exec ssh -c 3des "$@"
+call it say "cu_ssh", make it executable (chmod a+x cu_ssh) and set
+CVS_RSH to its full path (i.e. setenv CVS_RSH /path/to/cu_ssh).
+
+If it still does not work, email me for help.
+
+6. A few tips about CVS
+
+Information about using CVS is available at http://www.cvshome.org.
+The cvs manual is available at http://www.cvshome.org/docs/manual/.
+
+Some particularly useful commands are:
+* cvs -nq update
+  list the files that may need updating but do not update them..
+* cvs update
+  update your snapshot to the most current version in the repository.
+* cvs -n diff -rHEAD
+  shows a differences between your snapshot and the most current version
+  in the repository.
+
+
+
+If things go horribly wrong, it's likely that you're using an antiquated
+version of ssh, so try updating this. Or if in total desperation, email
+
+gtucker@cires.colorado.edu
+

@@ -1,0 +1,124 @@
+
+\documentclass[12pt]{amsart}
+\usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+%\geometry{a4paper} % or letter or a5paper or ... etc
+% \geometry{landscape} % rotated page geometry
+
+% See the ``Article customise'' template for come common customisations
+
+\title{CHILD Development Log}
+\author{Greg Tucker}
+%\date{} % delete this line to display the current date
+
+%%% BEGIN DOCUMENT
+\begin{document}
+
+\maketitle
+%\tableofcontents
+
+This is a log of development work on CHILD, beginning February 2011.
+
+\section{14 Feb 2011}
+\subsection{Stratigraphy Manager}
+
+We need a more efficient way to input and/or modify stratigraphy information in CHILD. To this end, I am designing a new utility class called ChildStratigraphyManager (or something like that). Because stratigraphy management is something shared by a number of models (like SedFlux), I would like to make the high-level design fairly generic. So before I write any code, here are some thoughts on capabilities and design.
+
+Capabilities of a Stratigraphy Manager should include:
+\begin{enumerate}
+  \item Read stratigraphy data from file (for a particular model/format)
+  \item Write stratigraphy data to file
+  \item Create a new stratigraphy with a given set of properties
+  \item Get or set any property $p$ at any given element $i$
+  \item Get or create a list of properties associated with a stratigraphy
+  \item Get or set properties
+\end{enumerate}
+
+For the ``strain softening'' project with Phaedra and Peter Koons, I specifically want to be able to modify the rock erodibility parameter to a set of arbitrary values at all ``rock'' layers at all nodes, tied to the node.
+
+I'm not sure I really need to re-engineer CHILD to make this happen. If I gave CHILD the option at startup of reading an existing stratigraphy file, regardless of whether it is a restart run or not, and with a user-specified name, then I could modify any given strat file in matlab.
+The algorithm would be something like this:
+\begin{enumerate}
+  \item Run CHILD with a default stratigraphy, which is output
+  \item Run FLAC and compute cohesion
+  \item In matlab coupler script, read cohesion and convert it to erodibility
+  \item In matlab, call function to read stratigraphy file
+  \item In matlab, call function to modify stratigraphy file according to erodibility
+  \item In matlab, call function to write strat file
+  \item In matlab, modify child input file to read the modified strat file on startup or restart
+\end{enumerate}
+
+That said, it would be cleaner if CHILD's stratigraphy were managed by a quasi-independent module, as opposed to being set within tMesh. It would be nice if CHILD could read a stratigraphy file from scratch, for example. 
+
+Ok, here's what to do. In tMesh, layers appear via ``MakeLayersFromInputData.'' This is only called from one spot within tMesh.cpp, which could be removed and replaced with an ``external'' call to a stratigraphy manager. The stratigraphy manager uses the code from that same function (moved to a new file) to read and construct layer data.
+
+First, though, I need a regression battery to be on the safe side!
+
+\section{17 Feb 2011}
+\subsection{Stratigraphy Manager}
+
+I can see that there are some general capabilities one would want a Stratigraphy Manager to have. These include, in addition to the above,
+\begin{enumerate}
+
+  \item Read (from file or via parameter passing) a set of Properties.
+  
+  These would presumably have to be typed, so you have sub-lists for integer, boolean, floating point, and string properties. (others? complex?)
+  
+  \item Maintain a way to access individual voxels (or perhaps alternately voxel boundaries). 
+  
+  In CHILD, this is done directly through the mesh for the ``normal'' strat.
+  
+  You want to be able to access the j-th voxel 
+  
+\section{22 Feb 2011}
+\subsection{Stratigraphy Manager}
+
+Notes on a possible design for a Stratigraphy Manager:
+\begin{itemize}
+\item The manager can ``point to'' or include a Stratigraphy (which means it can point to a stratigraphy that is embedded in another model, like CHILD)
+\item It can read a Stratigraphy from a file and assign it to the Stratigraphy to which it is pointing (or create a new one if needed)
+\item It can set its Stratigraphy pointer
+\item Either the Stratigraphy or the StratigraphyManager maintains a PropertyList, which is a list of the properties that a particular stratigraphy knows/has.
+\item Interface functions: get/set number of surface elements, get/set vector of how many layers there are at each point, get/set property list, get/set i-th property at j-th layer of k-th node.
+\item ... and: set a given property to a given value at a 3D point that falls within a voxel. 
+\item Set property uniformly over a depth range at a point, either ``slicing'' it in or averaging or whatever
+\item And similarly for other setting of properties ...
+\end{itemize}
+
+Probably makes sense to have the Stratigraphy Manager contain a list of properties. Handling types might be tricky. Something like:
+\begin{verbatim}
+class PropertyList
+{
+public:
+  GetNProperties();
+  SetNProperties();
+  GetNBoolProperties();
+  ... etc.
+  bool GetProperty( int n );
+  int GetProperty( int n );
+  ... etc.
+  bool GetPropertyByTag( char * tag );
+  int GetPropertyByTag( char * tag );
+  ... etc.
+
+private:
+  int n_properties_;
+  int n_bool_properties_;
+  int n_int_properties_;
+  int n_float_properties_;
+  int n_string_properties_;
+  vector<bool> bool_property_;
+  vector<int> int_property_;
+  vector<double> float_property_;
+  vector<string> string_property_;
+};
+\end{verbatim}
+The idea is that you use type checking to make sure that if the user calls the integer version of GetProperty( n ) that property n is actually an integer.
+
+But for now, this is all a bit cumbersome for what I want to do.
+
+  
+\end{enumerate}
+
+
+
+\end{document}

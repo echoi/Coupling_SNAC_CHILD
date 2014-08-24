@@ -1,0 +1,53 @@
+How to create a CVS repository
+Arnaud Desitter
+$Date: 2005-01-25 15:16:14 $
+
+#1 Choose a machine with
+- a permanent internet connection (if necessary)
+- a running ssh (secure shell) server (sshd)
+- cvs installed
+
+The instructions below assume a unix like operating system.
+
+#2 Create a local user (say childcvs)
+- The password can be left undefined (set it to * in the password field of
+  /etc/passwd or equivalent).  In such case, access can be granted either as
+  root or by adding a public key in "$HOME/.ssh/authorized_keys".
+- Create a minimal .cshrc if the login shell is csh or .profile if the login
+  shell is sh.
+  For instance (.cshrc):
+setenv PATH /usr/bin:/bin
+umask 022
+- make sure that $HOME is properly backed up.
+
+#3 Create a cvs directory
+- Log as 'childcvs', type: cd $HOME; cvs -d$HOME/cvs init.
+- Import the existing cvs data within $HOME/cvs.
+
+#4 Set up the ssh infrastructure
+- create a directory $HOME/.ssh, make it "chmod 700".
+- create a file $HOME/.ssh/authorized_keys.
+  Type touch "$HOME/.ssh/authorized_keys; chmod 400 $HOME/.ssh/authorized_keys"
+
+#5 Add ssh keys
+- Add each ssh public key in $HOME/.ssh/authorized_keys on one line
+  with the following model.
+
+command="cvs server",no-port-forwarding,no-pty,no-X11-forwarding,no-agent-forwarding ssh-rsa AAAAB3<...>67042 agore@toobad.wh.gov
+
+(see 'man sshd', section 'AUTHORIZED_KEYS FILE FORMAT')
+The above line grant an access for the user having the associated private key.
+The only usable command is "cvs server", which provides a
+reasonably good safety level.
+
+
+#6 Test the cvs connection logged as a different user following the
+instructions of get_snapshot.txt.
+
+
+
+References:
++ Anonymous CVS access via ssh, Joey Hess.
+  http://www.kitenet.net/~joey/sshcvs/
++ Setting up a CVS server for ssh clients
+  http://ioctl.org/unix/cvs/server
