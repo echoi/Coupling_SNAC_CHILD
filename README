@@ -54,3 +54,32 @@ which is specified in the input file for CHILD. testchild.in, for instance.)
 2.2 Visualize results
 
 Both codes produce (p)vtk files. One can use VisIt or ParaView to visualize them.
+
+
+3. Building pythia-0.8
+3.1 Fix Makefile.am
+
+ACLOCAL_AMFLAGS = -I ./m4 ==> ACLOCAL_AMFLAGS = -I m4
+
+3.2 Reconfigure
+
+autoreconf -i .
+
+3.3 Set up environment variables
+
+export CXX=g++-mp-4.8
+export CC=gcc-mp-4.8
+export MPI_DIR=/Users/eunseo/opt/openmpi-1.8
+export MPI_BINDIR=${MPI_DIR}/bin
+export MPI_LIBDIR=${MPI_DIR}/lib
+export MPI_INCDIR=${MPI_DIR}/include
+export MPI_RUN=${MPI_BINDIR}/mpirun
+export PATH=${MPI_BINDIR}:${PATH}
+export LD_LIBRARY_PATH=${MPI_LIBDIR}:${LD_LIBRARY_PATH}
+
+3.3 Run ./configure
+MPIINCLUDES=-I/Users/eunseo/opt/openmpi-1.8/include ./configure
+
+
+
+
