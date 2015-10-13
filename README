@@ -63,16 +63,7 @@ Both codes produce (p)vtk files. One can use VisIt or ParaView to visualize them
 - Download .egg file from https://pypi.python.org/pypi/merlin
 - sudo easy_install merlin-1.8.egg
 
-3.1.2 Exchanger
-- Contains classes to be inherited by StGermain and Snac's Exchanger module.
-- It tries to install pythia-0.8.
-/anaconda/bin/python setup.py install_deps -f /Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger-1.0.1/deps -zmxd /Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger-1.0.1/deps; 
-/anaconda/bin/python setup.py develop -H None -f /Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger-1.0.1/deps -x -d /Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger-1.0.1/python; 
-/anaconda/bin/python setup.py egg_flags (<-- Not working!!)
-- configure
-CC=/Users/eunseo/opt/openmpi-1.6.1/bin/mpicc CXX=/Users/eunseo/opt/openmpi-1.6.1/bin/mpicxx PYTHON=/anaconda/bin/python CXXFLAGS="-I${PYTHIA_INCDIR} -I${MPI_INCDIR}" LDFLAGS="-L${MPI_LIBDIR}" ./configure --prefix=/Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger
-
-3.1.3 Pythia-0.8
+3.1.2 pythia-0.8
 - Fix Makefile.am
 ACLOCAL_AMFLAGS = -I ./m4 ==> ACLOCAL_AMFLAGS = -I m4
 - Reconfigure
@@ -87,11 +78,37 @@ export MPI_INCDIR=${MPI_DIR}/include
 export MPI_RUN=${MPI_BINDIR}/mpirun
 export PATH=${MPI_BINDIR}:${PATH}
 export LD_LIBRARY_PATH=${MPI_LIBDIR}:${LD_LIBRARY_PATH}
-
 - Run ./configure
-MPIINCLUDES=-I/Users/eunseo/opt/openmpi-1.8/include ./configure
-
+MPIINCLUDES=-I/Users/eunseo/opt/openmpi-1.8/include ./configure --prefix=/Users/eunseo/projects/snac_bmi/pythia
 - make; make install
 
+3.1.3 Exchanger
+- Contains classes to be inherited by StGermain and Snac's Exchanger module.
+- It tries to install pythia-0.8.
+/anaconda/bin/python setup.py install_deps -f /Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger-1.0.1/deps -zmxd /Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger-1.0.1/deps; 
+/anaconda/bin/python setup.py develop -H None -f /Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger-1.0.1/deps -x -d /Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger-1.0.1/python; 
+/anaconda/bin/python setup.py egg_flags (<-- Not working!!)
+- configure
+CC=/Users/eunseo/opt/openmpi-1.6.1/bin/mpicc CXX=/Users/eunseo/opt/openmpi-1.6.1/bin/mpicxx PYTHON=/anaconda/bin/python CXXFLAGS="-I${PYTHIA_INCDIR} -I${MPI_INCDIR}" LDFLAGS="-L${MPI_LIBDIR}" ./configure --prefix=/Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger
+- make; make install (Note: the local sysconfig.pyc can confuse the install process).
+
+3.1.4 SNAC
+- Set up environment
+export PYTHON_DIR=/anaconda
+export PYTHON_VERSION=2.7
+export PYTHIA_DIR=${HOME}/projects/Coupling_SNAC_CHILD/snac_bmi/pythia
+export PYTHIA_INCDIR=${PYTHIA_DIR}/include/pythia-0.8
+export PYTHIA_LIBDIR=${PYTHIA_DIR}/lib
+export PYTHIA_BINDIR=${PYTHIA_DIR}/bin
+export PATH=${PYTHIA_BINDIR}:${PATH}
+export PYTHONPATH=${PYTHIA_LIBDIR}/python2.7/site-packages:${PYTHONPATH}
+
+export EXCHANGER_DIR=${HOME}/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger
+export EXCHANGER_INCDIR=${EXCHANGER_DIR}/include
+export EXCHANGER_LIBDIR=${EXCHANGER_DIR}/lib
+export EXCHANGER_BINDIR=${EXCHANGER_DIR}/bin
+export PATH=${PYTHIA_BINDIR}:${PATH}
+export LD_LIBRARY_PATH=${PYTHIA_LIBDIR}:${LD_LIBRARY_PATH}
+export PYTHONPATH=${PYTHIA_LIBDIR}/python2.7/site-packages:${PYTHONPATH}
 
 
