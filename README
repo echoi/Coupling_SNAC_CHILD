@@ -1,7 +1,7 @@
 Coupling_SNAC_CHILD
 ===================
 
-1. Building
+1. Building with Pythia
 
 1.1 set environments
 For example, in bash,
@@ -33,13 +33,13 @@ cd SNAC_CHILD
 ./configure --options=optimised
 make
 
-2. Test
+1.5 Test
 
 cd models
 cd SnacTest1
 Snac ./testsnac.xml
 
-2.1 Post-process results
+1.6 Post-process results
 In models/SnacTest1,
 SNAC:
 
@@ -51,19 +51,19 @@ CHILD:
 (give your child output prefix when prompted, 
 which is specified in the input file for CHILD. testchild.in, for instance.)
 
-2.2 Visualize results
+1.7 Visualize results
 
 Both codes produce (p)vtk files. One can use VisIt or ParaView to visualize them.
 
 
-3. Build Pyre-enabled SNAC
+2. Build SNAC with Pythia
 
-3.1 Dependencies
-3.1.1 merlin
+2.1 Install dependencies
+2.1.1 merlin
 - Download .egg file from https://pypi.python.org/pypi/merlin
 - sudo easy_install merlin-1.8.egg
 
-3.1.2 pythia-0.8
+2.1.2 pythia-0.8
 - Fix Makefile.am
 ACLOCAL_AMFLAGS = -I ./m4 ==> ACLOCAL_AMFLAGS = -I m4
 - Reconfigure
@@ -82,7 +82,7 @@ export LD_LIBRARY_PATH=${MPI_LIBDIR}:${LD_LIBRARY_PATH}
 MPIINCLUDES=-I/Users/eunseo/opt/openmpi-1.8/include ./configure --prefix=/Users/eunseo/projects/snac_bmi/pythia
 - make; make install
 
-3.1.3 Exchanger
+2.1.3 Exchanger
 - Contains classes to be inherited by StGermain and Snac's Exchanger module.
 - It tries to install pythia-0.8.
 /anaconda/bin/python setup.py install_deps -f /Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger-1.0.1/deps -zmxd /Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger-1.0.1/deps; 
@@ -92,7 +92,7 @@ MPIINCLUDES=-I/Users/eunseo/opt/openmpi-1.8/include ./configure --prefix=/Users/
 CC=/Users/eunseo/opt/openmpi-1.6.1/bin/mpicc CXX=/Users/eunseo/opt/openmpi-1.6.1/bin/mpicxx PYTHON=/anaconda/bin/python CXXFLAGS="-I${PYTHIA_INCDIR} -I${MPI_INCDIR}" LDFLAGS="-L${MPI_LIBDIR}" ./configure --prefix=/Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger
 - make; make install (Note: the local sysconfig.pyc can confuse the install process).
 
-3.1.4 SNAC
+2.1.4 SNAC
 - Set up environment
 export PYTHON_DIR=/anaconda
 export PYTHON_VERSION=2.7
