@@ -59,7 +59,7 @@ Both codes produce (p)vtk files. One can use VisIt or ParaView to visualize them
 2. Build SNAC with Pythia
 
 2.1 Install dependencies
-2.1.1 merlin
+2.1.1 merlin-1.8
 - Download .egg file from https://pypi.python.org/pypi/merlin
 - sudo easy_install merlin-1.8.egg
 
@@ -83,7 +83,7 @@ export LD_LIBRARY_PATH=${MPI_LIBDIR}:${LD_LIBRARY_PATH}
 MPIINCLUDES=-I/Users/eunseo/opt/openmpi-1.8/include ./configure --prefix=/Users/eunseo/projects/snac_bmi/pythia
 - make; make install
 
-2.1.3 Exchanger
+2.1.3 Exchanger-1.0.1
 - https://geodynamics.org/cig/software/exchanger/
 - Contains classes to be inherited by StGermain and Snac's Exchanger module.
 - It tries to install pythia-0.8.
