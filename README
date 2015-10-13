@@ -1,7 +1,7 @@
 Coupling_SNAC_CHILD
 ===================
 
-1. Building with Pythia
+1. Building without Pythia
 
 1.1 set environments
 For example, in bash,
@@ -64,6 +64,7 @@ Both codes produce (p)vtk files. One can use VisIt or ParaView to visualize them
 - sudo easy_install merlin-1.8.egg
 
 2.1.2 pythia-0.8
+- https://geodynamics.org/cig/software/pythia/
 - Fix Makefile.am
 ACLOCAL_AMFLAGS = -I ./m4 ==> ACLOCAL_AMFLAGS = -I m4
 - Reconfigure
@@ -83,6 +84,7 @@ MPIINCLUDES=-I/Users/eunseo/opt/openmpi-1.8/include ./configure --prefix=/Users/
 - make; make install
 
 2.1.3 Exchanger
+- https://geodynamics.org/cig/software/exchanger/
 - Contains classes to be inherited by StGermain and Snac's Exchanger module.
 - It tries to install pythia-0.8.
 /anaconda/bin/python setup.py install_deps -f /Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger-1.0.1/deps -zmxd /Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger-1.0.1/deps; 
