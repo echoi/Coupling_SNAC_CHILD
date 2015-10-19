@@ -65,10 +65,13 @@ Both codes produce (p)vtk files. One can use VisIt or ParaView to visualize them
 
 2.1.2 pythia-0.8
 - https://geodynamics.org/cig/software/pythia/
-- Fix Makefile.am
-ACLOCAL_AMFLAGS = -I ./m4 ==> ACLOCAL_AMFLAGS = -I m4
-- Reconfigure
-autoreconf -i .
+- snac_bmi now includes verstion 0.8 with the following changes:
+  - Fix Makefile.am
+    ACLOCAL_AMFLAGS = -I ./m4 ==> ACLOCAL_AMFLAGS = -I m4
+  - Reconfigure
+    autoreconf -i .
+  - pympi.h added to packages/mpi/mpimodule
+  
 - Set up environment variables
 export CXX=g++-mp-4.8
 export CC=gcc-mp-4.8
