@@ -80,9 +80,9 @@ export MPI_RUN=${MPI_BINDIR}/mpirun
 export PATH=${MPI_BINDIR}:${PATH}
 export LD_LIBRARY_PATH=${MPI_LIBDIR}:${LD_LIBRARY_PATH}
 - Run ./configure
-MPIINCLUDES=-I/Users/eunseo/opt/openmpi-1.8/include ./configure --prefix=/Users/eunseo/projects/snac_bmi/pythia
+MPIINCLUDES=-I${MPI_INCDIR} ./configure --prefix=/Users/eunseo/projects/snac_bmi/pythia
 - In case OpenMPI is used, check if libmpi_cxx is going to be linked:
-./packages/mpi/Makefile:_mpimodule_la_LDFLAGS = -module -lmpi_cxx
+./packages/mpi/Makefile:_mpimodule_la_LDFLAGS = -module $(MPI_LIBS)
 - make; make install
 
 2.1.3 Exchanger-1.0.1
