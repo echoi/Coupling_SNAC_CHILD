@@ -97,7 +97,7 @@ make; make install
 /anaconda/bin/python setup.py develop -H None -f /Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger-1.0.1/deps -x -d /Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger-1.0.1/python; 
 /anaconda/bin/python setup.py egg_flags (<-- Not working!!)
 - configure
-CC=/Users/eunseo/opt/openmpi-1.6.1/bin/mpicc CXX=/Users/eunseo/opt/openmpi-1.6.1/bin/mpicxx PYTHON=/anaconda/bin/python CXXFLAGS="-I${PYTHIA_INCDIR} -I${MPI_INCDIR}" LDFLAGS="-L${MPI_LIBDIR}" ./configure --prefix=/Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger
+CC=/Users/eunseo/opt/openmpi-1.6.1/bin/mpicc CXX=/Users/eunseo/opt/openmpi-1.6.1/bin/mpicxx PYTHON=/anaconda/bin/python CXXFLAGS="-fPIC -I${PYTHIA_INCDIR} -I${MPI_INCDIR}" LDFLAGS="-L${MPI_LIBDIR}" ./configure --prefix=/Users/eunseo/projects/Coupling_SNAC_CHILD/snac_bmi/Exchanger
 - make; make install (Note: the local sysconfig.pyc can confuse the install process).
 
 2.1.4 SNAC
